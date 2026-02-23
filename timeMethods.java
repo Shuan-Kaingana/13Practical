@@ -25,8 +25,8 @@ public class timeMethods {
          start = System.currentTimeMillis();
          
          // call the procedures to time here:
-         linearsearch ();
-         binarysearch ();
+         linearsearch (array, 12345);
+         binarySearch (array, 12345);
          // Figure out how to alter this guideline here,
          
          finish = System.currentTimeMillis();
