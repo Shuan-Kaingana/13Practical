@@ -2,10 +2,13 @@
 import java.lang.Math.*;
 import java.io.*;
 import java.text.*;
+import java.util.Random;
 
 public class timeMethods {
-   public static int N = 10000;
+   public static int N = 30;
    public static void main(String args[]){
+
+      int[] array = generateKeys(N);
 
    DecimalFormat twoD = new DecimalFormat("0.00");
    DecimalFormat fourD = new DecimalFormat("0.0000");
@@ -92,6 +95,17 @@ public class timeMethods {
            array[j + 1] = temp;
         }
    }
+
+   public static String[] generateKeys(int count) {
+       String[] keys = new String[count];
+        Random rand = new Random();
+         for (int i = 0; i < count; i++) {
+            // Generate a random number between 1 and 32654 
+            int num = rand.nextInt(32654) + 1;
+            // Format as 5-digit string with leading zeros
+            keys[i] = String.format("%05d", num); }
+             return keys; 
+            }
 
 }
 
