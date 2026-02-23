@@ -22,8 +22,8 @@ public class timeMethods {
          start = System.currentTimeMillis();
          
          // call the procedures to time here:
-         linearsearch (...);
-         binarysearch (...);
+         linearsearch ();
+         binarysearch ();
          // Figure out how to alter this guideline here,
          
          finish = System.currentTimeMillis();
@@ -51,11 +51,47 @@ public class timeMethods {
       System.out.println("________________________________________________");
       System.out.println();
       System.out.println(); 
-   }	
+   }
+    public static void binarySearch(int[] array, int value) {
+        insertionSort(array); // Ensure the array is sorted before performing binary search
+        int left = 0;
+        int right = array.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (array[mid] == value) {
+            } else if (array[mid] < value) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+    }
+   private static void linearsearch(int[] array, int key) {
+      for (int i = 0; i < array.length; i++) {
+         if (array[i] == key) {
+            return;
+         }
+      }
+   }
+
+   //This is to make sure that the array we implement is sorted if it is not already sorted
+   public static void insertionSort(int[] array) {
+      for (int i = 1; i < array.length; i++) {
+         int temp = array[i];
+         int j = i - 1;
+
+         // Shift elements greater than temp to the right
+           while (j >= 0 && array[j] > temp) {
+               array[j + 1] = array[j];
+               j--;
+           }
+
+           // Insert temp at the correct position
+           array[j + 1] = temp;
+        }
+   }
+
 }
 
-static void oneofyourMethods(int n, yourMethodParameter1, yourMethodParameter2, . . . ){
-   // The declarations and body of your method / s   
-   // The final statement of this code.
-
-}
